@@ -156,7 +156,7 @@ class ThreadedServer(object):
 		current_id = int(current_id)
 		#main connection loop
 		while True:
-			#recieve data
+			#receive data
 			if first_run == 0:
 				self.data = client.recv(4096)
 			elif first_run == 1:
@@ -176,7 +176,7 @@ class ThreadedServer(object):
 				for x in self.client_dict:
 					client.send(self.client_dict[x]['id_data'])
 				total_clients_connected += 1
-			#send recieved data
+			#send received data
 			if len(self.client_dict[current_id]['main_data'])>1:
 				for x in self.client_dict[current_id]['main_data']:
 					client.send(x)

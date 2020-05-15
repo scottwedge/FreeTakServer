@@ -57,7 +57,7 @@ class FreeTac_server():
             ready_to_read,ready_to_write,in_error = select.select(SOCKET_LIST,[],[],0)
           
             for sock in ready_to_read:
-                # a new connection request recieved
+                # a new connection request received
                 if sock == server_socket: 
                     sockfd, addr = server_socket.accept()
                     SOCKET_LIST.append(sockfd)
@@ -73,7 +73,7 @@ class FreeTac_server():
                  
                 # a message from a client, not a new connection
                 else:
-                    # process data recieved from client, 
+                    # process data received from client, 
                     try:
                         # receiving data from the socket.
                         data = sock.recv(RECV_BUFFER)

@@ -155,11 +155,11 @@ class ThreadedServer(object):
 			elif len(uid_by_dot)>0:
 				if uid_by_dot[0] == const.GEOCHAT:
 					data_value = const.GEOCHAT
-					logger.info('recieved the following GeoChat '+str(xml_string))
+					logger.info('received the following GeoChat '+str(xml_string))
 				else:
 					True
 			else:
-				logger.info('recieved the following CoT '+str(xml_string))
+				logger.info('received the following CoT '+str(xml_string))
 				pass
 			
 			#adds data to all connected client data list except sending client
@@ -254,7 +254,7 @@ class ThreadedServer(object):
 					total_data=b''.join(total_data)
 					return total_data
 				except Exception as e:
-					logger.warning('error in recieve all')
+					logger.warning('error in receive all')
 					logger.warning(e)
 					return None
 	def listenToClient(self, client, address):
@@ -283,7 +283,7 @@ class ThreadedServer(object):
 				#main connection loop
 				killSwitch = 0
 				while killSwitch == 0:
-					#recieve data
+					#receive data
 
 					try:
 						if first_run == 0:
@@ -318,7 +318,7 @@ class ThreadedServer(object):
 								client.close()
 								break
 							elif working == const.PING:
-								logger.debug('recieved ping')
+								logger.debug('received ping')
 
 							else:
 								pass
